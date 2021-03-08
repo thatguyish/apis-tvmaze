@@ -20,11 +20,11 @@
 async function searchShows(query) {
   // TODO: Make an ajax request to the searchShows api.  Remove
   // hard coded data.
-  const searchUrl = "http://api.tvmaze.com/search/shows?"
+  const searchUrl = "https://api.tvmaze.com/search/shows?"
   const res = await axios.get(searchUrl,{params:{"q":query}});
   const allShows=[];
   for(let showDetails of res.data){
-    const image = await axios.get(`http://api.tvmaze.com/shows/${showDetails.show.id}/images`);
+    const image = await axios.get(`https://api.tvmaze.com/shows/${showDetails.show.id}/images`);
     console.log(image);
 
     image.data.length<1? 
